@@ -1,0 +1,24 @@
+<%= form_with scope: :ride, url: user_rides_path, local: true, class: :"card " do |form| %>
+<div class="card-body">
+<p> 
+<%=  form.label :origin %>
+<%= form.text_field :origin, class: :"form-control"%>
+</p>
+<p>
+<%=  form.label :destination %>
+<%= form.text_field :destination, class: :"form-control"%>
+</p>
+<p>
+<%=  form.label :take_off %>
+<%= form.datetime_field :time, class: :"form-control" %>
+</p>
+<p>
+<%=  form.label :capacity %>
+<%= form.text_field :capacity, class: :"form-control" %>
+</p>
+<p>
+<%= form.submit  %>
+</p>
+</div>
+
+<% end %>

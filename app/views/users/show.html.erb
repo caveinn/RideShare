@@ -1,0 +1,9 @@
+<div class="card">
+<div class="card-body">
+ <%= @user.name%> <br>
+<%= @user.phone%> <br>
+<%= @user.email%> <br>
+<a class="btn btn-primary" href= <%= edit_user_path(@user) %>> Edit Profile</a>
+<a class="btn btn-primary" href= <%= new_user_ride_path(@user) %>> Create_ride</a>
+</div>
+</div>

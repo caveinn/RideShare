@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
     def create
-        p
         user = User.find_by(email: user_params[:email])
         if user.authenticate(user_params[:password])
             flash[:success] = "login successful"
@@ -11,6 +10,11 @@ class SessionsController < ApplicationController
             redirect_to "/login"
         end
     
+    end
+
+    def destroy
+        session.clear()
+        redirect_to "/"
     end
 
     private 

@@ -11,7 +11,7 @@
 
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">PATA<i>TAXI</i></a>
+  <a class="navbar-brand" href="#">Ride<i>Share</i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,13 +21,21 @@
       <li class="nav-item active">
         <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
       </li>
+      <%if current_user %>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <%= link_to "profile", user_path(current_user), class: "nav-link "%>
       </li>
       <li class="nav-item dropdown">
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link  " href="/logout" tabindex="-1" >Logout</a>
       </li>
+      <%else%>
+      <li class="nav-item active">
+        <a class="nav-link" href="/signup">Signup <span class="sr-only"></span></a>
+      </li><li class="nav-item active">
+        <a class="nav-link" href="/login">Login <span class="sr-only"></span></a>
+      </li>
+      <%end%>
     </ul>
   </div>
 </nav>

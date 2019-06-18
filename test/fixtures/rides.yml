@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  origin: MyString
+  destination: MyString
+  time: 2019-06-18 15:23:19
+  capacity: 1
+
+two:
+  user: two
+  origin: MyString
+  destination: MyString
+  time: 2019-06-18 15:23:19
+  capacity: 1

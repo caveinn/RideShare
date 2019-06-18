@@ -1,0 +1,47 @@
+<div class="card">
+<div class="card-body">
+<% @rides.each do |ride|%>
+ <div class="card">
+ <div class="card-body">
+    <div class="row">
+        <div class="col-sm-6">
+            <p>Origin</p>
+        </div>
+        <div class="col-sm-6">
+        <p><%= ride.origin %></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>destination</p>
+        </div>
+        <div class="col-sm-6">
+        <p><%= ride.destination %></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>Take off</p>
+        </div>
+        <div class="col-sm-6">
+        <p><%= ride.time %></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>Capacity</p>
+        </div>
+        <div class="col-sm-6">
+        <p><%= ride.capacity %></p>
+        </div>
+    </div>
+   
+    <% if ride.user_id != current_user.id %>
+    <a href="/rides/<%= ride.id %>/request" class="btn btn-primary  <%= "disabled" if my_requests.include?(ride.id)  %>">Request</a>
+    <%end%>
+ </div>
+ </div>
+ <br>
+<%end%>
+</div>
+</div>
