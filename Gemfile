@@ -33,8 +33,22 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+# use bootstrap for styling
+gem 'bootstrap', '~> 4.1', '>= 4.1.3'
+
+gem 'jquery-rails'
+
+gem 'bcrypt'
+
+gem 'pg'
+
+#make errors better looking
+gem 'better_errors', '~> 2.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
