@@ -1,5 +1,7 @@
-# RideShare
+[![Build Status](https://travis-ci.org/caveinn/RideShare.svg?branch=develop)](https://travis-ci.org/caveinn/RideShare)  
 
+# RideShare
+ 
  This is a ruby application that allows for car pooling
 for users. It works by allowing  users to offer rides from their 
 origin to their destination and then having those in need of the 

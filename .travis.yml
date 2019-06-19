@@ -1,0 +1,19 @@
+
+language: ruby
+rvm:
+  - 2.5.0
+branches:
+  only:
+  - /.*/
+
+cache: bundler
+
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database travis;' -U postgres
+script:
+  - bundle exec rails db:migrate RAILS_ENV=test
+  - bin/rails test
+services:
+  - redis-server

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
-  get "/rides" => "rides#index"
+  get "/rides" => "rides#rides_index"
   get "/rides/:id/request" => "rides#request_ride"
 
 end

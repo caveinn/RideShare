@@ -4,10 +4,10 @@ one:
   name: MyString
   phone: MyString
   email: MyString
-  password_digest: MyString
+  password_digest: $2a$12$.is4ZKzgQibDwvrNY.Q7fe/Ya3TmVCZRJa4frsDfGNT1xbVB.p4Ky
 
 two:
   name: MyString
   phone: MyString
   email: MyString
-  password_digest: MyString
+  password_digest: $2a$12$.is4ZKzgQibDwvrNY.Q7fe/Ya3TmVCZRJa4frsDfGNT1xbVB.p4Ky"

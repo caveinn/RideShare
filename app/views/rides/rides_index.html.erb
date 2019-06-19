@@ -2,7 +2,17 @@
 <div class="card-body">
 <% @rides.each do |ride|%>
  <div class="card">
+
+     <div class="card-header row">
+        <div class="col-sm-6">
+            <p>Offer_by</p>
+        </div>
+        <div class="col-sm-6">
+        <p><%= ride.user.name %></p>
+        </div>
+    </div>
  <div class="card-body">
+
     <div class="row">
         <div class="col-sm-6">
             <p>Origin</p>
@@ -35,11 +45,7 @@
         <p><%= ride.capacity %></p>
         </div>
     </div>
-    <%ride.requests.each do |request|%>
-    <%= request.user.name %><br>
-    <a href="/accept" class="btn btn-primary">accept</a>
-    <a href="/accept" class="btn btn-danger">reject</a><br>
-    <%end%>
+   
     <% if ride.user_id != current_user.id %>
     <a href="/rides/<%= ride.id %>/request" class="btn btn-primary  <%= "disabled" if my_requests.include?(ride.id)  %>">Request</a>
     <%end%>

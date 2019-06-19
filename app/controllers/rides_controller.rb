@@ -3,11 +3,16 @@ class RidesController < ApplicationController
 
     def create
        user.rides.create(ride_params)
+       redirect_to '/rides'
 
     end
 
-    def index
+    def rides_index
         @rides  = Ride.all
+    end
+
+    def index 
+        @rides = user.rides
     end
 
     def request_ride
