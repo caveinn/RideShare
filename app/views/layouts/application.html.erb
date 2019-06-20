@@ -35,7 +35,8 @@
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href=<%= new_user_ride_path(current_user)%>>Offer ride</a>
           <a class="dropdown-item" href=<%= user_rides_path(current_user)%>>My rides</a>
-          <a class="dropdown-item" href= <%= new_user_ride_path(current_user) %>> Offer ride</a>
+           <a class="dropdown-item" href= <%= "/rides" %>> Request ride</a>
+           <a class="dropdown-item" href="/requests">My requests</a>
           <div class="dropdown-divider"></div>
 
           <a class="dropdown-item " href="/logout" tabindex="-1" >Logout</a>

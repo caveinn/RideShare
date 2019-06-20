@@ -1,3 +1,5 @@
+
+<h2>My Requests</h2>
 <% @requests.each do |request|%>
  <% ride = request.ride %>
     <div class="card">
@@ -39,18 +41,19 @@
         <p><%= ride.capacity %></p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <p>Status</p>
+ </div>
+ <div class="card-footer">
+        <div class="row">
+        <div class="col-sm-6" style="display:inline;">
+            <strong>Status</strong>
         </div>
-        <div class="col-sm-6">
-        <p><%= "Pending" if request.accepted == nil %></p>
-        <p><%= "Accepted" if request.accepted  %></p>
-        <p><%= "Rejected" if request.accepted == false %></p>
+        <div class="col-sm-6 ">
+        <%= "Pending" if request.accepted == nil %>
+        <%= "Accepted" if request.accepted  %>
+        <%= "Rejected" if request.accepted == false %>
+        </div>
         </div>
     </div>
-   
- </div>
  </div>
  <br>
 <%end%>
