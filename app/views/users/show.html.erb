@@ -1,9 +1,30 @@
-<div class="card">
+<div class="card" >
 <div class="card-body">
- <%= @user.name%> <br>
-<%= @user.phone%> <br>
-<%= @user.email%> <br>
+<div calss="card-title"><h2>My Profile</h2></div>
+<br>
+<div class="row">
+    <div class="col-md-6">
+    <strong>Name</strong>
+    </div>
+    <div class="col-md-6">
+    <p><%=@user.name%></p>
+    </div>
+
+    <div class="col-md-6">
+    <strong>Email</strong>
+    </div>
+    <div class="col-md-6">
+    <p><%=@user.email%></p>
+    </div>
+
+     <div class="col-md-6">
+    <strong>Phone</strong>
+    </div>
+    <div class="col-md-6">
+    <p><%=@user.phone%></p>
+    </div>
+</div>
+
 <a class="btn btn-primary" href= <%= edit_user_path(@user) %>> Edit Profile</a>
-<a class="btn btn-primary" href= <%= new_user_ride_path(@user) %>> Create_ride</a>
 </div>
 </div>

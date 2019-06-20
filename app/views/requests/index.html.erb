@@ -1,6 +1,6 @@
-<h2> All Rides</h2>
-<% @rides.each do |ride|%>
- <div class="card">
+<% @requests.each do |request|%>
+ <% ride = request.ride %>
+    <div class="card">
 
      <div class="card-header">
         <span><strong>Offer by</strong> <%= ride.user.name.capitalize%><span>
@@ -39,10 +39,17 @@
         <p><%= ride.capacity %></p>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>Status</p>
+        </div>
+        <div class="col-sm-6">
+        <p><%= "Pending" if request.accepted == nil %></p>
+        <p><%= "Accepted" if request.accepted  %></p>
+        <p><%= "Rejected" if request.accepted == false %></p>
+        </div>
+    </div>
    
-    <% if ride.user_id != current_user.id %>
-    <a href="/rides/<%= ride.id %>/request" class="btn btn-primary  <%= "disabled" if my_requests.include?(ride.id)  %>">Request</a>
-    <%end%>
  </div>
  </div>
  <br>

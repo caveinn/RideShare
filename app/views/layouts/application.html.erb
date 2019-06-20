@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CabHailing</title>
+    <title>RideShare</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -23,12 +23,26 @@
       </li>
       <%if current_user %>
       <li class="nav-item">
-        <%= link_to "profile", user_path(current_user), class: "nav-link "%>
+        <%= link_to "All Rides", "/rides", class: "nav-link "%>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Profile", user_path(current_user), class: "nav-link "%>
       </li>
       <li class="nav-item dropdown">
-      <li class="nav-item">
-        <a class="nav-link  " href="/logout" tabindex="-1" >Logout</a>
+        <a class="nav-link dropdown-toggle mr-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.name %>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href=<%= new_user_ride_path(current_user)%>>Offer ride</a>
+          <a class="dropdown-item" href=<%= user_rides_path(current_user)%>>My rides</a>
+          <a class="dropdown-item" href= <%= new_user_ride_path(current_user) %>> Offer ride</a>
+          <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item " href="/logout" tabindex="-1" >Logout</a>
+  
+        </div>
       </li>
+      
       <%else%>
       <li class="nav-item active">
         <a class="nav-link" href="/signup">Signup <span class="sr-only"></span></a>
@@ -50,5 +64,6 @@
   </div>
     <%= yield %>
   </div>
+  
   </body>
 </html>

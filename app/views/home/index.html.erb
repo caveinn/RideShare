@@ -1,0 +1,42 @@
+ <div class="container">
+  <div class="container text-center">
+    <div class="title">
+    <h1>Welcome</h1>
+    </div>
+    <p>Welcome to RideShare your number one tranport solution.  
+    You will be able to offer and book rides from your collagues.<br>
+    Get the best experience to your location by booking offered rides</p>
+    <% if not current_user%>
+    <a href="/login" class="btn btn-secondary">Login</a>
+    <a href="users/new" class="btn btn-secondary">Signup</a>
+    <%end%>
+  </div>
+  <br>
+  <br>
+  <hr>
+  <div class="row">
+    <div class="col-sm-6">
+        <div class="card" style = "border:none">
+        <div class="card-body">
+            <h5 class="card-title">Request ride</h5>
+            <p class="card-text">With <strong >RideShare</strong> you are able to request rides from your collagues headed
+            in the same direction as yourself</p>
+            <%if current_user%>
+            <a href=<%= rides_path(rides_path)%> class="btn btn-primary">Request a ride</a>
+            <%end%>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card" style = "border:none">
+        <div class="card-body">
+            <h5 class="card-title">Offer to share a ride</h5>
+            <p class="card-text"> Headed somewhere with your car and need of compnany or just want to helpp a collague out. Offer them a ride.</p>
+            <%if current_user%>
+            <a href= <%= new_user_ride_path(current_user)%> class="btn btn-primary">Offer a ride</a>
+            <%end%>
+        </div>
+        </div>
+    </div>
+    </div>
+ </div>

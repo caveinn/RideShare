@@ -1,6 +1,10 @@
 class RidesController < ApplicationController
     before_action :set_ride,only: [:request_ride]
 
+    def new
+        @ride = Ride.new
+    end
+
     def create
        user.rides.create(ride_params)
        redirect_to '/rides'
