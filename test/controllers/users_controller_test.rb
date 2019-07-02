@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
-    @test_user = { name: @user.name, email: @user.email, phone: @user.phone, password: "pass123", password_confirmation: 'pass123'}
+    @test_user = { name: "test_user", email: "test_user@test.com", phone: "0700000001", password: "pass123", password_confirmation: 'pass123'}
   end
   test "should get the user signup  form" do
     get "/signup"

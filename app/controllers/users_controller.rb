@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         user = User.new(user_params)
         if user.save
             flash[:success] = "succesfully created the user #{user.name}"
-            redirect_to "/signup"
+            redirect_to "/login"
         else
             flash[:warning] = "failure in registering. Confirm your information"
             redirect_to "/signup"
