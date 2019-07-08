@@ -15,10 +15,6 @@ class RidesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should be able to create rides" do 
-    post user_rides_path(@user), params: {ride: @test_ride}
-    assert_response :redirect
-  end
 
   test "should get the rides for a prticular user" do 
     get user_rides_path(@user)

@@ -16,6 +16,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require flatpickr
 
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')

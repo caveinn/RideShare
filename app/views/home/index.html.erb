@@ -22,7 +22,7 @@
             <p class="card-text">With <strong >RideShare</strong> you are able to request rides from your collagues headed
             in the same direction as yourself</p>
             <%if current_user%>
-            <a href=<%= rides_path(rides_path)%> class="btn btn-primary">Request a ride</a>
+            <a href=<%= create_request_path %> class="btn btn-primary">Request a ride</a>
             <%end%>
         </div>
         </div>
@@ -33,7 +33,7 @@
             <h5 class="card-title">Offer to share a ride</h5>
             <p class="card-text"> Headed somewhere with your car and need of compnany or just want to helpp a collague out. Offer them a ride.</p>
             <%if current_user%>
-            <a href= <%= new_user_ride_path(current_user)%> class="btn btn-primary">Offer a ride</a>
+            <a href= <%= show_offer_form_path %> class="btn btn-primary">Offer a ride</a>
             <%end%>
         </div>
         </div>

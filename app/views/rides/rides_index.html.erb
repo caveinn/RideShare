@@ -3,7 +3,7 @@
  <div class="card">
 
      <div class="card-header">
-        <span><strong>Offer by</strong> <%= ride.user.name.capitalize%><span>
+        <span><strong><%=  ride.driver_id ? "Offer by" : "Request by"%></strong> <%= ride.user.name.capitalize%><span>
     </div>
  <div class="card-body">
 
@@ -39,10 +39,13 @@
         <p><%= ride.capacity %></p>
         </div>
     </div>
-   
-    <% if ride.user_id != current_user.id %>
+
+    <% if ride.user_id != current_user.id and ride.driver_id != nil and ride.capacity > 0%>
     <a href="/rides/<%= ride.id %>/request" class="btn btn-primary  <%= "disabled" if my_requests.include?(ride.id)  %>">Request</a>
+    <%elsif ride.user_id != current_user.id and ride.driver_id == nil %>
+        <a href="/rides/<%= ride.id %>/offer" class="btn btn-primary ">Accept request</a>
     <%end%>
+
  </div>
  </div>
  <br>

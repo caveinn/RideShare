@@ -45,6 +45,8 @@ gem 'bcrypt'
 
 gem 'pg'
 
+gem "flatpickr_rails"
+
 #make errors better looking
 gem 'better_errors', '~> 2.4'
 

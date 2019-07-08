@@ -1,14 +1,38 @@
 class RidesController < ApplicationController
-    before_action :set_ride,only: [:request_ride]
+    before_action :set_ride,only: [:request_ride, :offer_to_request ]
 
     def new
         @ride = Ride.new
     end
 
-    def create
-       user.rides.create(ride_params)
+    def create_request
+       ride = user.rides.create(ride_params)
+       request = Request.new(user: user, ride: ride)
+       request.save
        redirect_to '/rides'
+    end
 
+    def offer_to_request 
+        @ride.driver_id = user.id
+        @ride.save
+        flash[:success] = "ride offered succesfully" 
+        redirect_to "/rides" 
+    end
+
+    def create_offer
+        puts ride_params.inspect
+        ride_params["driver_id"] = user.id
+        ride = user.rides.create(ride_params)
+        puts ride.errors.inspect
+        redirect_to "/rides"
+    end
+
+    def request_form
+        @ride = Ride.new
+    end
+
+    def offer_form
+        @ride = Ride.new
     end
 
     def rides_index
