@@ -48,7 +48,7 @@ gem 'pg'
 gem "flatpickr_rails"
 
 #make errors better looking
-gem 'better_errors', '~> 2.4'
+gem 'better_errors', '~> 2.8'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
